@@ -15,41 +15,49 @@ function getComputerChoice() {
 } 
 
 function getPlayerChoice() {
-    const pick = prompt("Rock Paper or Scissors?")
+    const pick = prompt("Rock Paper or Scissors?").toLowerCase();
     return pick
 }
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection == "rock" && playerSelection == "rock") {
-        console.log("It's a draw");
+        const draw = console.log("It's a draw");
+        return draw;
     }
     else if (computerSelection == "paper" && playerSelection == "paper") {
-        console.log("It's a draw");
+        const draw = console.log("It's a draw");
+        return draw;
     } 
     else if (computerSelection == "scissors" && playerSelection == "scissors") {
-        console.log("It's a draw");
+        const draw = console.log("It's a draw");
+        return draw;
     } 
     else if (computerSelection == "rock" && playerSelection == "scissors") {
-        console.log("Computer wins this round");
+        const computerWin = console.log("Computer wins this round");
+        return computerWin;
     } 
     else if (computerSelection == "paper" && playerSelection == "rock") {
-        console.log("Computer wins this round");
+        const computerWin = console.log("Computer wins this round");
+        return computerWin;
     } 
     else if (computerSelection == "scissors" && playerSelection == "paper") {
-        console.log("Computer wins this round");
+        const computerWin = console.log("Computer wins this round");
+        return computerWin;
     } 
     else if (computerSelection == "scissors" && playerSelection == "rock") {
-        console.log("You win this round");
+        const playerWin = console.log("You win this round");
+        return playerWin;
     }
     else if (computerSelection == "paper" && playerSelection == "scissors") {
-        console.log("You win this round");
+        const playerWin = console.log("You win this round");
+        return playerWin;
     }
     else if (computerSelection == "rock" && playerSelection == "paper") {
-        console.log("You win this round");
+        const playerWin = console.log("You win this round");
+        return playerWin;
     }
 }
-  
-   
+
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
   console.log(computerSelection)
