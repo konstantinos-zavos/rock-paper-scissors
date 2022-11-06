@@ -1,19 +1,12 @@
-// Rock paper scissors
-// Computer chooses on random 
-// I can choose either of the three
-// First to reach score:5 wins
-// Pseudo Code <----
-// Get user's input
-// Generate computer's choice
-// Assign which option wins over which one
-// Keep count on wins and finish game on 5 wins
+
+//  Variables list
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
-
+// Functions
 
 function getComputerChoice() {
     let arr = ["rock", "paper", "scissors"];
@@ -22,7 +15,11 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     const pick = prompt("Rock Paper or Scissors?").toLowerCase(); 
-    return pick
+    if (pick === "rock" || pick === "paper" || pick === "scissors") {
+         return pick;
+    } else {
+    return document. location. reload() 
+}
 }
 
 function draw() {
@@ -30,15 +27,14 @@ function draw() {
 }
 
 function computerWin() {
-    console.log("Computer Wins")
+    console.log("Computer Wins!")
     computerScore = computerScore + 1;
 }
 
 function playerWin() {
-    console.log("Player wins")
+    console.log("Player wins!")
     playerScore = playerScore + 1;
 }
-
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection == "rock" && playerSelection == "rock") {
@@ -68,32 +64,14 @@ function playRound(playerSelection, computerSelection) {
     else if (computerSelection == "rock" && playerSelection == "paper") {
         return playerWin();
     }
+    
 }
 
-// function announceRoundWinner() {
-// console.log("Computer picks "+computerSelection +".");
-// console.log(playRound(playerSelection, computerSelection));
-// }
 
+// Generic Console logs
 
-
+console.log("Player picks "+playerSelection +".");
 console.log("Computer picks "+computerSelection +".");
 console.log(playRound(playerSelection, computerSelection));
-
 console.log("Player's score is: "+playerScore)
 console.log("Computer's score is: "+computerScore)
-
-
-// function game() {
-//     for (let i = 0; i < 5; i++) {
-//     if (playerScore <= 0 || computerScore <= 0) {
-//         return 
-//     } else if (playerScore === 5) {
-//         console.log("Player won!")
-//     } else if (computerScore === 5) {
-//         console.log("Computer won")
-//     } 
-// }
-// }
-
-// game();
