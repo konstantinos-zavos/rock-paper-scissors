@@ -14,6 +14,11 @@ function getComputerChoice() {
     return arr[Math.floor(arr.length * Math.random())];
 } 
 
+function getPlayerChoice() {
+    const pick = prompt("Rock Paper or Scissors?")
+    return pick
+}
+
 function playRound(playerSelection, computerSelection) {
     if (computerSelection == "rock" && playerSelection == "rock") {
         console.log("It's a draw");
@@ -45,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
 }
   
    
-  const playerSelection = "rock";
+  const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
   console.log(computerSelection)
   console.log(playRound(playerSelection, computerSelection));
