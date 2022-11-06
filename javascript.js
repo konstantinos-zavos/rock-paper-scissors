@@ -8,6 +8,12 @@
 // Assign which option wins over which one
 // Keep count on wins and finish game on 5 wins
 
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+let playerScore = 0;
+let computerScore = 0;
+
+
 
 function getComputerChoice() {
     let arr = ["rock", "paper", "scissors"];
@@ -25,10 +31,12 @@ function draw() {
 
 function computerWin() {
     console.log("Computer Wins")
+    computerScore = computerScore + 1;
 }
 
 function playerWin() {
     console.log("Player wins")
+    playerScore = playerScore + 1;
 }
 
 
@@ -62,13 +70,30 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+// function announceRoundWinner() {
+// console.log("Computer picks "+computerSelection +".");
+// console.log(playRound(playerSelection, computerSelection));
+// }
+
+
+
 console.log("Computer picks "+computerSelection +".");
 console.log(playRound(playerSelection, computerSelection));
 
+console.log("Player's score is: "+playerScore)
+console.log("Computer's score is: "+computerScore)
+
 
 // function game() {
-//     for (let i = 0; i < 5; i++)  {
-//     }
+//     for (let i = 0; i < 5; i++) {
+//     if (playerScore <= 0 || computerScore <= 0) {
+//         return 
+//     } else if (playerScore === 5) {
+//         console.log("Player won!")
+//     } else if (computerScore === 5) {
+//         console.log("Computer won")
+//     } 
 // }
+// }
+
+// game();
