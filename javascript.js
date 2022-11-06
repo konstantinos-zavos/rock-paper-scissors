@@ -1,5 +1,5 @@
 
-//  Variables list
+// Variables list
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
@@ -67,11 +67,29 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-
 // Generic Console logs
 
-console.log("Player picks "+playerSelection +".");
-console.log("Computer picks "+computerSelection +".");
-console.log(playRound(playerSelection, computerSelection));
-console.log("Player's score is: "+playerScore)
-console.log("Computer's score is: "+computerScore)
+// console.log("Player picks "+playerSelection +".");
+// console.log("Computer picks "+computerSelection +".");
+// console.log(playRound(playerSelection, computerSelection));
+// console.log("Player's score is: "+playerScore)
+// console.log("Computer's score is: "+computerScore)
+
+
+// Fresh start
+
+
+// Function that console.logs the result of the current round
+function roundResults() {
+    console.log("Player's score is: "+playerScore)
+    console.log("Computer's score is: "+computerScore)
+}
+
+//  Game Function
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound(playerSelection, computerSelection);
+        roundResults();
+     }
+}
+game()
