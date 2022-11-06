@@ -10,6 +10,42 @@
 
 
 function getComputerChoice() {
-    let arr = ["Rock", "Paper", "Scissors"];
+    let arr = ["rock", "paper", "scissors"];
     return arr[Math.floor(arr.length * Math.random())];
 } 
+
+function playRound(playerSelection, computerSelection) {
+    if (computerSelection == "rock" && playerSelection == "rock") {
+        console.log("It's a draw");
+    }
+    else if (computerSelection == "paper" && playerSelection == "paper") {
+        console.log("It's a draw");
+    } 
+    else if (computerSelection == "scissors" && playerSelection == "scissors") {
+        console.log("It's a draw");
+    } 
+    else if (computerSelection == "rock" && playerSelection == "scissors") {
+        console.log("Computer wins this round");
+    } 
+    else if (computerSelection == "paper" && playerSelection == "rock") {
+        console.log("Computer wins this round");
+    } 
+    else if (computerSelection == "scissors" && playerSelection == "paper") {
+        console.log("Computer wins this round");
+    } 
+    else if (computerSelection == "scissors" && playerSelection == "rock") {
+        console.log("You win this round");
+    }
+    else if (computerSelection == "paper" && playerSelection == "scissors") {
+        console.log("You win this round");
+    }
+    else if (computerSelection == "rock" && playerSelection == "paper") {
+        console.log("You win this round");
+    }
+}
+  
+   
+  const playerSelection = "rock";
+  const computerSelection = getComputerChoice();
+  console.log(computerSelection)
+  console.log(playRound(playerSelection, computerSelection));
