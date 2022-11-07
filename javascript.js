@@ -20,20 +20,24 @@ function getPlayerChoice() {
     } else {
     return document. location. reload() 
 }
+
 }
 
 function draw() {
-    console.log("It's a draw.")
+    console.log("It's a draw.");
+    return getPlayerChoice() + getComputerChoice();
 }
 
 function computerWin() {
     console.log("Computer Wins!")
     computerScore = computerScore + 1;
+    return getPlayerChoice() + getComputerChoice() + showChoices() ;
 }
 
 function playerWin() {
     console.log("Player wins!")
     playerScore = playerScore + 1;
+    return getPlayerChoice() + getComputerChoice()+ showChoices();
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -69,8 +73,10 @@ function playRound(playerSelection, computerSelection) {
 
 // Generic Console logs
 
+
 // console.log("Player picks "+playerSelection +".");
 // console.log("Computer picks "+computerSelection +".");
+
 // console.log(playRound(playerSelection, computerSelection));
 // console.log("Player's score is: "+playerScore)
 // console.log("Computer's score is: "+computerScore)
@@ -90,6 +96,29 @@ function game() {
     for (let i = 0; i < 5; i++) {
         playRound(playerSelection, computerSelection);
         roundResults();
+        endResult();
      }
+
 }
 game()
+
+
+// Day 2 
+// I need to find a way to get user's input again before looping
+
+function endResult() {
+    if (computerScore == 5) {
+        console.log("*****Computer won the game!*****")
+    } else if (playerScore == 5) {
+        console.log("*****Player won the game!*****")
+    } else if (playerScore == 0 && computerScore == 0) {
+        console.log("*****It was a draw!*****")
+    }
+}
+
+function showChoices() {
+    console.log("Player picks "+playerSelection +".");
+    console.log("Computer picks "+computerSelection +".");
+    }
+
+
