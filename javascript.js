@@ -5,6 +5,8 @@ const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
+let arr = "";
+let pick = "";
 
 // Functions
 
@@ -14,7 +16,7 @@ function getComputerChoice() {
 } 
 
 function getPlayerChoice() {
-    const pick = prompt("Rock Paper or Scissors?").toLowerCase(); 
+    let pick = prompt("Rock Paper or Scissors?").toLowerCase(); 
     if (pick === "rock" || pick === "paper" || pick === "scissors") {
          return pick;
     } else {
@@ -23,21 +25,36 @@ function getPlayerChoice() {
 
 }
 
+// function roundEnd(){
+//     let arr = getPlayerChoice();
+//     let pick = getComputerChoice();
+//     var c = showChoices();
+//     return arr && pick && c;
+// }
+
+function roundEnd(){
+    let a = getComputerChoice()
+    let b = getPlayerChoice()
+    var c = showChoices();
+    return a && b && c;
+}
+
+
 function draw() {
     console.log("It's a draw.");
-    return getPlayerChoice() + getComputerChoice();
+    return roundEnd();
 }
 
 function computerWin() {
     console.log("Computer Wins!")
     computerScore = computerScore + 1;
-    return getPlayerChoice() + getComputerChoice() + showChoices() ;
+    return roundEnd();
 }
 
 function playerWin() {
     console.log("Player wins!")
     playerScore = playerScore + 1;
-    return getPlayerChoice() + getComputerChoice()+ showChoices();
+    return roundEnd();
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -95,6 +112,7 @@ function roundResults() {
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound(playerSelection, computerSelection);
+        getComputerChoice();
         roundResults();
         endResult();
      }
@@ -117,8 +135,12 @@ function endResult() {
 }
 
 function showChoices() {
-    console.log("Player picks "+playerSelection +".");
-    console.log("Computer picks "+computerSelection +".");
+    if (computerScore <= 5 && playerScore <= 5) {
+    console.log(">>Player picks "+playerSelection +".");
+    console.log(">>Computer picks "+computerSelection +".");
+} else {
+    console.log("game is finito bro how you got here?");
+}
     }
 
 
