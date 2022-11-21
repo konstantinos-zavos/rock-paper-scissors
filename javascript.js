@@ -150,20 +150,46 @@ function getComputerChoice() {
     let arr = ["rock", "paper", "scissors"];
     return arr[Math.floor(arr.length * Math.random())];
 }
-
-function getPlayerChoice() {
-    let playerSelection;
-    return playerSelection;
-}
-
 console.log(getComputerChoice());
 
 let playerSelection = ""
+let computerSelection = ""
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
     playerSelection = button.id;
-    return console.log(playerSelection)
+    computerSelection = getComputerChoice();
+    return playRound(playerSelection, computerSelection);
     });
   });
+
+function playRound(playerSelection, computerSelection) {
+    if (computerSelection == "rock" && playerSelection == "rock") {
+        return console.log("Draw");
+    }
+    else if (computerSelection == "paper" && playerSelection == "paper") {
+        return console.log("Draw")
+    } 
+    else if (computerSelection == "scissors" && playerSelection == "scissors") {
+        return console.log("Draw")
+    } 
+    else if (computerSelection == "rock" && playerSelection == "scissors") {
+        return console.log("Win")
+    } 
+    else if (computerSelection == "paper" && playerSelection == "rock") {
+        return console.log("Win")
+    } 
+    else if (computerSelection == "scissors" && playerSelection == "paper") {
+        return console.log("Win")
+    } 
+    else if (computerSelection == "scissors" && playerSelection == "rock") {
+        return console.log("Lose")
+    }
+    else if (computerSelection == "paper" && playerSelection == "scissors") {
+        return console.log("Lose")
+    }
+    else if (computerSelection == "rock" && playerSelection == "paper") {
+        return console.log("Lose")
+    }
+}
