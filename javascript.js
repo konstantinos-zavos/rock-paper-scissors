@@ -165,31 +165,20 @@ buttons.forEach((button) => {
   });
 
 function playRound(playerSelection, computerSelection) {
-    if (computerSelection == "rock" && playerSelection == "rock") {
+    if (computerSelection == "rock" && playerSelection == "rock"
+    ||  computerSelection == "paper" && playerSelection == "paper" 
+    ||  computerSelection == "scissors" && playerSelection == "scissors" ) {
         return console.log("Draw");
-    }
-    else if (computerSelection == "paper" && playerSelection == "paper") {
-        return console.log("Draw")
     } 
-    else if (computerSelection == "scissors" && playerSelection == "scissors") {
-        return console.log("Draw")
-    } 
-    else if (computerSelection == "rock" && playerSelection == "scissors") {
+    else if (computerSelection == "rock" && playerSelection == "scissors"
+    || computerSelection == "paper" && playerSelection == "rock"  
+    || computerSelection == "scissors" && playerSelection == "paper") {
         return console.log("Win")
+
     } 
-    else if (computerSelection == "paper" && playerSelection == "rock") {
-        return console.log("Win")
-    } 
-    else if (computerSelection == "scissors" && playerSelection == "paper") {
-        return console.log("Win")
-    } 
-    else if (computerSelection == "scissors" && playerSelection == "rock") {
-        return console.log("Lose")
-    }
-    else if (computerSelection == "paper" && playerSelection == "scissors") {
-        return console.log("Lose")
-    }
-    else if (computerSelection == "rock" && playerSelection == "paper") {
+    else if (computerSelection == "scissors" && playerSelection == "rock"
+    || computerSelection == "paper" && playerSelection == "scissors"
+    || computerSelection == "rock" && playerSelection == "paper") {
         return console.log("Lose")
     }
 }
