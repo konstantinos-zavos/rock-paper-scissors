@@ -205,6 +205,7 @@ function playerWins() {
     score.classList.add('playerScore');
     score.textContent = playerScore;
     scores.appendChild(score);
+    endResult();
 }
 
 function playerLost() {
@@ -221,6 +222,7 @@ function playerLost() {
     score.classList.add('computerScore');
     score.textContent = computerScore;
     computerScores.appendChild(score);
+    endResult();
     }
 
 function gameDraw() {
@@ -230,4 +232,23 @@ function gameDraw() {
     content.classList.add('content');
     content.textContent = 'It\'s a draw!!';
     container.appendChild(content);
+    endResult();
+}
+
+const endresults = document.querySelector('#endresult');
+
+function endResult() {
+    if (computerScore == 5) {
+        const gamefinish = document.createElement('div')
+        gamefinish.classList.add('gamefinish')
+        gamefinish.textContent = 'Computer has won the game! Good luck next time.';
+        endresults.appendChild(gamefinish);
+        console.log("Computer won the game???")
+    } else if (playerScore == 5) {
+        const gamefinish = document.createElement('div')
+        gamefinish.classList.add('gamefinish')
+        gamefinish.textContent = 'You have won the game! Congratulations!';
+        endresults.appendChild(gamefinish);
+        console.log("Player won the game!")
+    }
 }
