@@ -22,6 +22,7 @@ h1 {
 
 h3 {
     margin-top: 10px;
+    text-decoration: underline;
 }
 #restart {
     display:block;
@@ -31,6 +32,7 @@ h3 {
     margin-top: 15px;
     padding: 8px;
     animation: fadeIn 6s;
+    font-weight: bold;
 }
 
 #restartgame {
@@ -43,7 +45,8 @@ h3 {
     height: 30px;
     margin: 5px;
     padding: 10px;
-    width: 50px;
+    width: 60px;
+    font-weight: bold;
 }
 
 #paper {
@@ -52,7 +55,9 @@ h3 {
     height: 30px;
     margin: 5px;
     padding: 10px;
-    width: 50px;
+    width: 60px;
+    font-weight: bold;
+
 }
 
 #scissors {
@@ -61,7 +66,9 @@ h3 {
     height: 30px;
     margin: 5px;
     padding: 10px;
-    width: 50px;
+    width: 60px;
+    font-weight: bold;
+
 }
 
 #restart-div {
@@ -80,6 +87,7 @@ h3 {
     align-items: center;
     padding: 10px;    
     margin-top: 10px;
+    border: 2px solid black;
 }
 
 #buttons {
@@ -90,6 +98,7 @@ h3 {
     margin-top: 10px;
     margin-bottom: 10px;
     gap: 5px;
+    
 }
 
 #endresult {
@@ -107,4 +116,15 @@ h3 {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+  }
+
+
+  #header-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    margin: 15px;
+    padding: 5px;
+    padding: 0 15px;
   }
