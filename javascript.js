@@ -143,3 +143,27 @@
 // }
 //     }
 
+
+
+
+function getComputerChoice() {
+    let arr = ["rock", "paper", "scissors"];
+    return arr[Math.floor(arr.length * Math.random())];
+}
+
+function getPlayerChoice() {
+    let playerSelection;
+    return playerSelection;
+}
+
+console.log(getComputerChoice());
+
+let playerSelection = ""
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+    playerSelection = button.id;
+    return console.log(playerSelection)
+    });
+  });
