@@ -243,12 +243,19 @@ function endResult() {
         gamefinish.classList.add('gamefinish')
         gamefinish.textContent = 'Computer has won the game! Good luck next time.';
         endresults.appendChild(gamefinish);
+        document.getElementById("rock").setAttribute('disabled','disabled');
         console.log("Computer won the game???")
     } else if (playerScore == 5) {
         const gamefinish = document.createElement('div')
         gamefinish.classList.add('gamefinish')
         gamefinish.textContent = 'You have won the game! Congratulations!';
         endresults.appendChild(gamefinish);
+        document.getElementById("rock").setAttribute('disabled','disabled');
         console.log("Player won the game!")
+
     }
 }
+
+document.getElementById("restart").addEventListener("click", function() {
+    location.reload();
+  });
