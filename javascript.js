@@ -146,14 +146,10 @@
 
 
 
-function getComputerChoice() {
-    let arr = ["rock", "paper", "scissors"];
-    return arr[Math.floor(arr.length * Math.random())];
-}
-console.log(getComputerChoice());
 
-let playerSelection = ""
-let computerSelection = ""
+
+let playerSelection
+let computerSelection
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
@@ -163,6 +159,11 @@ buttons.forEach((button) => {
     return playRound(playerSelection, computerSelection);
     });
   });
+
+  function getComputerChoice() {
+    let arr = ["rock", "paper", "scissors"];
+    return arr[Math.floor(arr.length * Math.random())];
+}
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection == "rock" && playerSelection == "rock"
@@ -182,3 +183,16 @@ function playRound(playerSelection, computerSelection) {
         return console.log("Lose")
     }
 }
+
+// test
+ 
+// const container = document.querySelector('#container');
+
+
+// function playerWins() {
+// const content = document.createElement('div');
+// content.classList.add('content');
+// content.textContent = 'This is the glorious text-content!';
+// }
+
+// container.appendChild(content);
