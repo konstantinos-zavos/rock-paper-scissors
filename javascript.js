@@ -169,30 +169,49 @@ function playRound(playerSelection, computerSelection) {
     if (computerSelection == "rock" && playerSelection == "rock"
     ||  computerSelection == "paper" && playerSelection == "paper" 
     ||  computerSelection == "scissors" && playerSelection == "scissors" ) {
-        return console.log("Draw");
+        return gameDraw();
     } 
     else if (computerSelection == "rock" && playerSelection == "scissors"
     || computerSelection == "paper" && playerSelection == "rock"  
     || computerSelection == "scissors" && playerSelection == "paper") {
-        return console.log("Win")
+        return playerWins();
 
     } 
     else if (computerSelection == "scissors" && playerSelection == "rock"
     || computerSelection == "paper" && playerSelection == "scissors"
     || computerSelection == "rock" && playerSelection == "paper") {
-        return console.log("Lose")
+        return playerLost();
     }
 }
 
 // test
  
-// const container = document.querySelector('#container');
+const container = document.querySelector('#container');
 
 
-// function playerWins() {
-// const content = document.createElement('div');
-// content.classList.add('content');
-// content.textContent = 'This is the glorious text-content!';
-// }
+function playerWins() {
+    const list = document.getElementById("container");
+    list.removeChild(list.firstElementChild);
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'Player Wins this round!';
+    container.appendChild(content);
+}
 
-// container.appendChild(content);
+function playerLost() {
+    const list = document.getElementById("container");
+    list.removeChild(list.firstElementChild);
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'Player Lost this round!';
+    container.appendChild(content);
+    }
+
+function gameDraw() {
+    const list = document.getElementById("container");
+    list.removeChild(list.firstElementChild);
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'It\'s a draw!!';
+    container.appendChild(content);
+}
