@@ -244,6 +244,8 @@ function endResult() {
         gamefinish.textContent = 'Computer has won the game! Good luck next time.';
         endresults.appendChild(gamefinish);
         document.getElementById("rock").setAttribute('disabled','disabled');
+        document.getElementById("paper").setAttribute('disabled','disabled');
+        document.getElementById("scissors").setAttribute('disabled','disabled');
         console.log("Computer won the game???")
     } else if (playerScore == 5) {
         const gamefinish = document.createElement('div')
@@ -251,6 +253,8 @@ function endResult() {
         gamefinish.textContent = 'You have won the game! Congratulations!';
         endresults.appendChild(gamefinish);
         document.getElementById("rock").setAttribute('disabled','disabled');
+        document.getElementById("paper").setAttribute('disabled','disabled');
+        document.getElementById("scissors").setAttribute('disabled','disabled');
         console.log("Player won the game!")
 
     }
