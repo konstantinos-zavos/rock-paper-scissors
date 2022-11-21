@@ -17,14 +17,45 @@ h1 {
     align-items: center;
     align-content: center;
     margin-bottom: 10px;
+    margin-top: 10px
 }
 
+h3 {
+    margin-top: 10px;
+}
 #restart {
     display:block;
     max-width: 100px;
     height: 30px;
     margin: 5px;
     margin-top: 15px;
+}
+
+#rock {
+    display:block;
+    max-width: 100px;
+    height: 30px;
+    margin: 5px;
+    padding: 10px;
+    width: 50px;
+}
+
+#paper {
+    display:block;
+    max-width: 100px;
+    height: 30px;
+    margin: 5px;
+    padding: 10px;
+    width: 50px;
+}
+
+#scissors {
+    display:block;
+    max-width: 100px;
+    height: 30px;
+    margin: 5px;
+    padding: 10px;
+    width: 50px;
 }
 
 #restart-div {
@@ -58,3 +89,8 @@ h1 {
 #endresult {
     margin: 10px;
 }
+
+#container {
+    margin: 10px;
+}
+
