@@ -150,6 +150,8 @@
 
 let playerSelection
 let computerSelection
+let playerScore = 0;
+let computerScore = 0;
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
@@ -184,18 +186,25 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// test
  
 const container = document.querySelector('#container');
-
+const scores = document.querySelector('#scores');
+const computerScores = document.querySelector('#computerScores');
 
 function playerWins() {
-    const list = document.getElementById("container");
-    list.removeChild(list.firstElementChild);
+    const resultList = document.getElementById("container");
+    resultList.removeChild(resultList.firstElementChild);
     const content = document.createElement('div');
     content.classList.add('content');
     content.textContent = 'Player Wins this round!';
     container.appendChild(content);
+    playerScore += 1;
+    const scoreList = document.getElementById("scores");
+    scoreList.removeChild(scoreList.firstElementChild);
+    const score = document.createElement('div');
+    score.classList.add('playerScore');
+    score.textContent = playerScore;
+    scores.appendChild(score);
 }
 
 function playerLost() {
@@ -205,6 +214,13 @@ function playerLost() {
     content.classList.add('content');
     content.textContent = 'Player Lost this round!';
     container.appendChild(content);
+    computerScore += 1;
+    const computerScoreList = document.getElementById("computerScores");
+    computerScoreList.removeChild(computerScoreList.firstElementChild);
+    const score = document.createElement('div');
+    score.classList.add('computerScore');
+    score.textContent = computerScore;
+    computerScores.appendChild(score);
     }
 
 function gameDraw() {
