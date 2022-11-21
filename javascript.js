@@ -91,12 +91,13 @@ function endResult() {
     if (computerScore == 5) {
         const gamefinish = document.createElement('div')
         gamefinish.classList.add('gamefinish')
-        gamefinish.textContent = 'Computer has won the game! Good luck next time.';
+        gamefinish.textContent = 'Computer has won the game! Better luck next time.';
         endresults.appendChild(gamefinish);
         document.getElementById("rock").setAttribute('disabled','disabled');
         document.getElementById("paper").setAttribute('disabled','disabled');
         document.getElementById("scissors").setAttribute('disabled','disabled');
         console.log("Computer won the game???")
+        document.getElementById('restart-div').style.display = 'flex';
     } else if (playerScore == 5) {
         const gamefinish = document.createElement('div')
         gamefinish.classList.add('gamefinish')
@@ -106,6 +107,7 @@ function endResult() {
         document.getElementById("paper").setAttribute('disabled','disabled');
         document.getElementById("scissors").setAttribute('disabled','disabled');
         console.log("Player won the game!")
+        document.getElementById('restart-div').style.display = 'flex';
 
     }
 }
@@ -113,3 +115,5 @@ function endResult() {
 document.getElementById("restart").addEventListener("click", function() {
     location.reload();
   });
+
+document.getElementById('restart-div').style.display = 'none';
